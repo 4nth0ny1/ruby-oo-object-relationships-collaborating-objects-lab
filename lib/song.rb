@@ -1,13 +1,13 @@
+require "pry"
+
 class Song
     attr_accessor :name, :artist
 
-    @@count = 0
-    @@instances = []
+    @@all = []
   
     def initialize(name)
       @name = name
-      @@count += 1
-      @@instances << self
+      save
     end
   
     def self.new_by_filename(file)
@@ -25,11 +25,11 @@ class Song
     end
     
     def self.all
-        @@instances
+        @@all
     end
 
-    def self.count
-        @@count
-    end
+    def save 
+      @@all << self
+    end 
     
   end 

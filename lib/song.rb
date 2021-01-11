@@ -8,7 +8,6 @@ class Song
       @name = name
       @@count += 1
       @@instances << self
-      @@instances
     end
   
     def self.new_by_filename(file)
